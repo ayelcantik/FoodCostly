@@ -5,52 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F0E1"
-    tools:context=".TambahResepJava">
-
-    <!-- ... (bagian atas sama seperti sebelumnya) ... -->
-
-    <TextView
-        android:id="@+id/text_bahan_bahan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Bahan-bahan:"
-        android:textColor="#795548"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_tambahkan" />
-
-    <LinearLayout
-        android:id="@+id/layout_list_bahan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_bahan_bahan">
-        <!-- Item-item bahan akan ditambahkan di sini secara dinamis -->
-
-    </LinearLayout>
-
-    <!-- ... (bagian bawah sama seperti sebelumnya) ... -->
-
-    <Button
-        android:id="@+id/button_simpan"
-        android:layout_width="199dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#A88771"
-        android:text="Simpan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="646dp" />
+    tools:context=".tambahresep">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -59,94 +14,183 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05" />
 
+    <!-- Perubahan di sini -->
+
     <ImageButton
         android:id="@+id/button_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
         android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back Button"
+        android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_top"
-        android:contentDescription="Back Button" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
     <TextView
         android:id="@+id/text_input_bahan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="Input Bahan:"
         android:textColor="#795548"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="119dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138"
+        />
 
     <EditText
         android:id="@+id/edit_nama_bahan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="239dp"
+        android:layout_height="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:hint="Nama Bahan"
         android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/edit_jumlah_bahan"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_input_bahan" />
 
     <EditText
         android:id="@+id/edit_jumlah_bahan"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_width="84dp"
+        android:layout_height="57dp"
         android:layout_marginEnd="8dp"
         android:hint="1"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/edit_nama_bahan"
         app:layout_constraintEnd_toStartOf="@+id/spinner_satuan" />
 
+    <!-- Sampai sini -->
+
     <Spinner
         android:id="@+id/spinner_satuan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:entries="@array/satuan_array"
+        android:layout_width="85dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="56dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/edit_jumlah_bahan"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/button_refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="201dp"
+        android:layout_marginEnd="84dp"
         android:contentDescription="Refresh"
-        android:src="@drawable/ic_baseline_refresh_24"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="168dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_tambahkan"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
 
     <Button
         android:id="@+id/button_tambahkan"
-        android:layout_width="211dp"
-        android:layout_height="50dp"
+        android:layout_width="178dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#A88771"
         android:text="Tambahkan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_nama_bahan" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="362dp"
-        android:layout_height="77dp"
+    <TextView
+        android:id="@+id/text_bahan_bahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Bahan-bahan:"
+        android:textColor="#795548"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_tambahkan" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_bahan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_bahan_bahan"
+        tools:listitem="@layout/item_bahan" />
+
+    <!-- Bottom Navigation -->
+    <Button
+        android:id="@+id/button_simpan"
+        android:layout_width="112dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#A88771"
+        android:text="Simpan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"
-        app:srcCompat="@drawable/resepku2" />
+        app:layout_constraintVertical_bias="0.854" />
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#795548"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/button_timer"
+            android:layout_width="45dp"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/riwayat"
+            android:src="@drawable/baseline_access_time_24" />
+
+        <ImageButton
+            android:id="@+id/button_home"
+            android:layout_width="40dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/beranda"
+            android:src="@drawable/baseline_home_24" />
+
+        <ImageButton
+            android:id="@+id/button_profile"
+            android:layout_width="35dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/profile"
+            android:src="@drawable/baseline_account_circle_24"
+            app:tint="#F5EEE9" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="261dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_input_bahan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/resepku2"
+        app:layout_constraintTop_toBottomOf="@+id/button_back"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

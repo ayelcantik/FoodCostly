@@ -1,4 +1,4 @@
-package com.example.resepmakanan; // Ganti dengan nama package kamu
+package com.example.foodcostly; // Ganti dengan nama package kamu
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,10 +6,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View;
 
-import com.example.foodcostly.R;
 
-
-public class LihatResepkuJava extends AppCompatActivity {
+public class LihatResepku extends AppCompatActivity {
 
     ImageButton btnBack, btnEdit, btnTimer, btnHome, btnProfile;
     TextView txtJudulResep, txtBahanResep;
