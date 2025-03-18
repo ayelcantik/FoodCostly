@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FoodCostly</string>
+    <string-array name="satuan_array">
+        <item>kg</item>
+        <item>gram</item>
+        <item>ml</item>
+        <item>liter</item>
+    </string-array>
 </resources>
